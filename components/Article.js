@@ -68,6 +68,3 @@ data.forEach(obj => {
   const article = articleMaker(title, date, firstParagraph, secondParagraph, thirdParagraph)
   document.querySelector('.articles').appendChild(article)
 })
-
-const menuDiv = document.createElement('div')
-console.log(menuDiv)
