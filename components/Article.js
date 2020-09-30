@@ -39,12 +39,19 @@ function articleMaker(title, date, firstParagraph, secondParagraph, thirdParagra
   p2.textContent = secondParagraph
   p3.textContent = thirdParagraph
   expand.textContent = '+'
-
+  expand.style.fontSize = '2.4rem'
+  expand.style.fontWeight = 'bold'
+  expand.style.color = 'black'
 
   // Step 2: Still inside `articleMaker`, add an event listener to the span.expandButton.
   // This listener should toggle the class 'article-open' on div.article.
   expand.addEventListener('click', () => {
     articleDiv.classList.toggle('article-open')
+    if(expand.textContent === '+'){
+      expand.textContent = '-'
+    }else {
+      expand.textContent = '+'
+    }
   })
 
   // Step 3: Don't forget to return something from your function!
@@ -61,3 +68,6 @@ data.forEach(obj => {
   const article = articleMaker(title, date, firstParagraph, secondParagraph, thirdParagraph)
   document.querySelector('.articles').appendChild(article)
 })
+
+const menuDiv = document.createElement('div')
+console.log(menuDiv)
